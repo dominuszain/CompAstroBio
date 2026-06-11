@@ -1,0 +1,49 @@
+============================================
+ PYLINT STYLE CHECKS  (target: >= 8.0, 0 E)
+============================================
+
+--- demo_bls.ipynb ---
+************* Module demo_bls
+demo_bls.ipynb:cell_7:5:0: C0301: Line too long (110/100) (line-too-long)
+demo_bls.ipynb:cell_4:1:12: W0621: Redefining name 'time' from outer scope (line 4) (redefined-outer-name)
+demo_bls.ipynb:cell_4:21:4: W0621: Redefining name 'trend' from outer scope (line 188) (redefined-outer-name)
+demo_bls.ipynb:cell_5:1:0: R0914: Too many local variables (26/15) (too-many-locals)
+demo_bls.ipynb:cell_5:1:12: W0621: Redefining name 'time' from outer scope (line 4) (redefined-outer-name)
+demo_bls.ipynb:cell_5:63:11: W0718: Catching too general exception Exception (broad-exception-caught)
+demo_bls.ipynb:cell_7:4:6: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+demo_bls.ipynb:cell_9:1:21: W0621: Redefining name 'row' from outer scope (line 291) (redefined-outer-name)
+demo_bls.ipynb:cell_9:6:8: W0621: Redefining name 't' from outer scope (line 185) (redefined-outer-name)
+demo_bls.ipynb:cell_9:6:11: W0621: Redefining name 'f' from outer scope (line 185) (redefined-outer-name)
+demo_bls.ipynb:cell_9:7:8: W0621: Redefining name 'f_det' from outer scope (line 188) (redefined-outer-name)
+demo_bls.ipynb:cell_9:8:8: W0621: Redefining name 'result' from outer scope (line 207) (redefined-outer-name)
+demo_bls.ipynb:cell_9:9:11: W0718: Catching too general exception Exception (broad-exception-caught)
+
+-----------------------------------
+Your code has been rated at 9.49/10
+
+  PASSED  (score: 9.49, E errors: 0)
+
+--- demo_cnn.ipynb ---
+************* Module demo_cnn
+demo_cnn.ipynb:cell_3:7:17: W0621: Redefining name 'filepath' from outer scope (line 95) (redefined-outer-name)
+demo_cnn.ipynb:cell_3:26:24: W0621: Redefining name 'time' from outer scope (line 4) (redefined-outer-name)
+demo_cnn.ipynb:cell_3:28:4: W0621: Redefining name 't_grid' from outer scope (line 98) (redefined-outer-name)
+demo_cnn.ipynb:cell_3:33:22: W0621: Redefining name 'time' from outer scope (line 4) (redefined-outer-name)
+demo_cnn.ipynb:cell_4:16:11: W0718: Catching too general exception Exception (broad-exception-caught)
+demo_cnn.ipynb:cell_5:5:0: C0103: Constant name "n_train" doesn't conform to UPPER_CASE naming style (invalid-name)
+demo_cnn.ipynb:cell_5:13:0: C0103: Constant name "n_transit_train" doesn't conform to UPPER_CASE naming style (invalid-name)
+demo_cnn.ipynb:cell_5:14:0: C0103: Constant name "n_nontransit_train" doesn't conform to UPPER_CASE naming style (invalid-name)
+demo_cnn.ipynb:cell_7:23:4: C0116: Missing function or method docstring (missing-function-docstring)
+demo_cnn.ipynb:cell_7:64:4: C0116: Missing function or method docstring (missing-function-docstring)
+demo_cnn.ipynb:cell_8:21:6: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+demo_cnn.ipynb:cell_8:22:6: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+demo_cnn.ipynb:cell_8:23:6: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+
+-----------------------------------
+Your code has been rated at 9.53/10
+
+  PASSED  (score: 9.53, E errors: 0)
+
+============================================
+ ALL PYLINT CHECKS PASSED
+============================================
