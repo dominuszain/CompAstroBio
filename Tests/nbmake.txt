@@ -1,0 +1,37 @@
+============================================
+ NBMAKE EXECUTION CHECKS
+============================================
+
+--- demo_bls.ipynb ---
+.                                                                        [100%]
+=============================== warnings summary ===============================
+demo_bls.ipynb::demo_bls.ipynb
+demo_bls.ipynb::demo_bls.ipynb
+  /usr/lib/python3/dist-packages/asttokens/util.py:202: DeprecationWarning: importing 'Const' from 'astroid' is deprecated and will be removed in v5, import it from 'astroid.nodes' instead
+    from astroid import Const
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+Learn more about nbmake at https://github.com/treebeardtech/nbmake
+
+1 passed, 2 warnings in 214.88s (0:03:34)
+  PASSED
+
+--- demo_cnn.ipynb ---
+.                                                                        [100%]
+=============================== warnings summary ===============================
+demo_cnn.ipynb::demo_cnn.ipynb
+demo_cnn.ipynb::demo_cnn.ipynb
+  /usr/lib/python3/dist-packages/asttokens/util.py:202: DeprecationWarning: importing 'Const' from 'astroid' is deprecated and will be removed in v5, import it from 'astroid.nodes' instead
+    from astroid import Const
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+Learn more about nbmake at https://github.com/treebeardtech/nbmake
+
+1 passed, 2 warnings in 77.92s (0:01:17)
+  PASSED
+
+============================================
+ ALL NBMAKE CHECKS PASSED
+============================================
