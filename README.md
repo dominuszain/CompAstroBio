@@ -44,6 +44,7 @@ Then open `demo_bls.ipynb` or `demo_cnn.ipynb` in Jupyter and run
 **Kernel → Restart & Run All**. Both notebooks complete in a few minutes on a
 standard laptop CPU. The CNN demo trains a network from scratch on 80 samples;
 no GPU required.
+NOTE: Make sure to point the notebooks where the dataset is located.
 
 ## Full Dataset
 
