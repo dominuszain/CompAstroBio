@@ -1,4 +1,4 @@
-# UMBRA
+# UMBRA [www.doi.org/10.13140/RG.2.2.31127.74407]
 
 # Deep Learning Detection of Exoplanet Transits in PSLS-Simulated PLATO Light Curves
 
