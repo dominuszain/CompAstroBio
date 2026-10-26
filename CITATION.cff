@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software or the dataset, please cite them as below."
+message: "If you use this software, paper, or dataset, please cite them as below."
 type: software
 title: "UMBRA: Deep Learning Detection of Exoplanet Transits in PSLS-Simulated PLATO Light Curves"
 abstract: "A comparison of Box Least Squares and a ResNet-1D convolutional neural network for detecting exoplanet transits in simulated PLATO light curves."
@@ -21,6 +21,14 @@ keywords:
   - machine learning
   - BLS
 references:
+  - type: unpublished
+    title: "Deep Learning Detection of Exoplanet Transits in PSLS-Simulated PLATO Light Curves"
+    authors:
+      - family-names: Ul Abideen
+        given-names: Zain
+    year: 2026
+    doi: "10.13140/RG.2.2.31127.74407"
+    url: "https://doi.org/10.13140/RG.2.2.31127.74407"
   - type: data
     title: "PSLS-based computations for exoplanet transits"
     authors:
