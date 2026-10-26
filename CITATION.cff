@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software or the dataset, please cite them as below."
+type: software
+title: "UMBRA: Deep Learning Detection of Exoplanet Transits in PSLS-Simulated PLATO Light Curves"
+abstract: "A comparison of Box Least Squares and a ResNet-1D convolutional neural network for detecting exoplanet transits in simulated PLATO light curves."
+authors:
+  - family-names: Ul Abideen
+    given-names: Zain
+    email: zain2@uni-bremen.de
+    affiliation: University of Bremen
+version: "1.0.0"
+date-released: "2026-10-26"
+license: MIT
+url: "https://github.com/dominuszain/CompAstroBio"
+repository-code: "https://github.com/dominuszain/CompAstroBio"
+keywords:
+  - astrophysics
+  - exoplanets
+  - transit detection
+  - PLATO
+  - machine learning
+  - BLS
+references:
+  - type: data
+    title: "PSLS-based computations for exoplanet transits"
+    authors:
+      - family-names: Ul Abideen
+        given-names: Zain
+    doi: "10.5281/zenodo.19715574"
+    url: "https://doi.org/10.5281/zenodo.19715574"
+EOF

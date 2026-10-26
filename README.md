@@ -1,66 +1,108 @@
-# UMBRA [www.doi.org/10.13140/RG.2.2.31127.74407]
+# UMBRA
 
-# Deep Learning Detection of Exoplanet Transits in PSLS-Simulated PLATO Light Curves
+**Deep learning detection of exoplanet transits in PSLS-simulated PLATO light curves**
 
 [![MASS-UBMATF](https://img.shields.io/badge/MASS--UBMATF-Computational_Astrobiology_2026-blue)](https://master-mass.eu/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19715574.svg)](https://doi.org/10.5281/zenodo.19715574)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## Summary
+This project compares two methods for detecting planetary transits in simulated
+PLATO light curves: the Box Least Squares (BLS) algorithm and a ResNet-1D
+convolutional neural network. Both are tested on 1000 PSLS simulations. The CNN
+reaches 96.7% accuracy, compared with 91.3% for BLS. Both methods lose
+sensitivity for long-period planets that produce only one or two transits in the
+267-day observing window.
 
-When astronomers hunt for planets around other stars, they look for tiny, periodic
-dips in brightness — a planet passing in front of its star blocks a fraction of the
-light. ESA's upcoming PLATO mission will produce thousands of such "light curves,"
-each with nearly a million measurements per star. Finding planets in this flood of
-data is like searching for a needle in a haystack the size of a stadium.
+**Author:** Zain Ul Abideen, Erasmus Mundus MASS programme
+**GitHub repository:** [dominuszain/CompAstroBio](https://github.com/dominuszain/CompAstroBio)
 
-This project compares two approaches: the classical **Box Least Squares (BLS)**
-algorithm, which fits a box-shaped transit model at every possible orbital period,
-and a **ResNet-1D convolutional neural network (CNN)** that learns transit patterns
-directly from 1000 simulated PLATO light curves. The CNN correctly identifies
-transits 96.7% of the time, outperforming BLS at 91.3%. Both methods are limited by
-long-period planets where only one or two transits occur within the 267-day
-observational window.
+## Results
 
-## Repo Contents
+| Method | Accuracy | Confusion matrix |
+|---|---|---|
+| BLS | 91.3% | <img src="Docs/bls_confusion_matrix.png" width="260"> |
+| ResNet-1D CNN | 96.7% | <img src="Docs/cnn_confusion_matrix.png" width="260"> |
 
-| File | What it is |
+![CNN training and validation loss](Docs/train_valid_loss.png)
+
+The full analysis is in `BLS/bls_transit_detection.ipynb` and
+`CNN/cnn_resnet_transit.ipynb`. The report is in `Docs/report.pdf`.
+
+## Repository contents
+
+| Path | Contents |
 |---|---|
-| `demo_bls.ipynb` | BLS pipeline on 100-file demo subset (runs ~1 minute) |
-| `demo_cnn.ipynb` | CNN pipeline on 100-file demo subset (runs ~2 minutes) |
-| `full_bls_results.ipynb` | BLS on full 1000-file dataset (outputs saved, do not re-run) |
-| `full_cnn_results.ipynb` | CNN on full 1000-file dataset (outputs saved, do not re-run) |
-| `dataset/` | 100-file demo subset with `metadata.csv` |
-| `metadata.csv` | Full 1000-sample metadata (for reference) |
-| `script/` | Bash scripts that generated the full dataset |
-| `docs/` | Project report + student guide documents |
+| `demo_bls.ipynb` | Short BLS demo on the included sample |
+| `demo_cnn.ipynb` | Short CNN demo on the included sample |
+| `full_bls_results.ipynb` | BLS run on the full 1000-light-curve dataset |
+| `full_cnn_results.ipynb` | CNN run on the full 1000-light-curve dataset |
+| `BLS/` | BLS analysis notebook and notes |
+| `CNN/` | ResNet-1D analysis notebook and notes |
+| `dataset/sample/` | 100 simulated light curves used by the demos (about 1.1 GB) |
+| `dataset/psls.yaml` | PSLS configuration used to generate the data |
+| `dataset/script.sh` | Script that produced the dataset |
+| `Task01/` to `Task04/` | Course task reports and the full metadata table |
+| `Docs/` | Project report and figures |
+| `Tests/` | Notebook execution and style checks |
 
-## Running the Demos
+The sample directory holds 50 transit and 50 non-transit light curves, which is
+enough to run both demo notebooks end to end.
+
+## Installation
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Then open `demo_bls.ipynb` or `demo_cnn.ipynb` in Jupyter and run
-**Kernel → Restart & Run All**. Both notebooks complete in a few minutes on a
-standard laptop CPU. The CNN demo trains a network from scratch on 80 samples;
-no GPU required.
-NOTE: Make sure to point the notebooks where the dataset is located.
+The CNN demo uses PyTorch and runs on a laptop CPU. No GPU is required.
 
-## Full Dataset
+## Running the demos
 
-The 1000-light-curve dataset (~33 GB, archived as ~11 GB zip) is available on
-Zenodo:
+Open `demo_bls.ipynb` or `demo_cnn.ipynb` in Jupyter and run all cells. If you
+move the dataset, update the `DATA_DIR` path at the top of each notebook.
+
+## Full dataset
+
+The complete 1000-light-curve dataset (about 33 GB uncompressed, archived as an
+11 GB zip) is available on Zenodo:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19715574.svg)](https://doi.org/10.5281/zenodo.19715574)
 
-Generated via `script/script.sh` using the PLATO Solar-like Light-curve
-Simulator (PSLS). The `dataset/` folder in this repo contains a 100-file subset
-identical to the first 50 transit and last 50 non-transit entries of the full
-set — sufficient to run the demos end-to-end.
+The data were generated with the PLATO Solar-like Light-curve Simulator (PSLS)
+using `dataset/psls.yaml` and `dataset/script.sh`. The full per-run metadata is
+in `Task04/metadata.csv`.
+
+## Tests
+
+```bash
+pip install pytest nbmake nbqa pylint
+bash Tests/test_nbmake.sh
+bash Tests/test_pylint.sh
+```
 
 ## Citation
 
-If you use the dataset or code, please cite:
+If you use the dataset or the code, please cite:
 
-> Ul Abideen, Z. (2026). *PSLS-based computations for exoplanet transits*
-> [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.19715574
+```bibtex
+@dataset{ulabideen_umbra_2026,
+  author    = {Ul Abideen, Zain},
+  title     = {PSLS-based computations for exoplanet transits},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.19715574},
+  url       = {https://doi.org/10.5281/zenodo.19715574}
+}
+```
+
+## License
+
+The code is released under the [MIT License](LICENSE). The simulated dataset and
+notebook outputs are released under [CC BY 4.0](LICENSE-DATA).
+
+## Acknowledgements
+
+Produced for the Computational Astrobiology course in the MASS programme
+(University of Belgrade, 2026).
